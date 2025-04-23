@@ -1,0 +1,83 @@
+.selector
+  position: relative
+  width: 360px
+  .wrap
+    display: none
+    &.show
+      display: block
+      position: absolute
+      overflow-x: hidden
+      width: 100%
+      padding: 10px 10px
+      border: .8px solid #c6c6c6
+      // margin: 0px 5px
+      border-radius: 10px
+      max-height: 200px
+      box-shadow: 0 0 3px rgba(137, 137, 137, 0.5)
+      &::-webkit-scrollbar
+        width: 8px
+        height: 80%
+      &::-webkit-scrollbar-track
+        opacity: 0
+        display: none
+        background: transparent;
+      &::-webkit-scrollbar-thumb
+        background: #a7a6a6
+        border-radius: 99px
+
+        
+        
+
+.input
+  padding: 14px 10px
+  margin-bottom: 5px
+  width: 100%
+  border-radius: 12px
+  border: .5px solid #555555
+  outline: none
+  font-size: 16px
+  &:focus
+    border: 2px solid #036cc1
+    box-shadow: 0 0 15px rgba(3, 108, 193, 0.5)
+
+
+
+.option
+  padding: 8px 10px
+  cursor: pointer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-radius: 10px
+  &:hover
+   background: #b8d7fe
+   color: #0184ff
+  &.selected
+    background: #cde0f0
+    color: #0184ff
+  .active
+    color: #0086f4;
+
+.option-flex
+  display: flex
+  gap: 8px
+  align-items: center
+  justify-content: space-between
+
+.selector-input
+  position: relative
+  width: 100%
+
+  &>div
+    position: absolute
+    right: -3%
+    height: 30px
+    top: 10px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    
+.rotate
+  transform: rotate(180deg)
+  color: #0086f4;
