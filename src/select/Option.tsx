@@ -7,6 +7,7 @@ interface IOption {
 	value: string;
 	activeVal: string;
 	Icon?: typeof Icon;
+	selected?: string;
 }
 
 export default function Option({
@@ -15,13 +16,14 @@ export default function Option({
 	value,
 	activeVal,
 	Icon,
+	selected,
 }: Readonly<IOption>) {
 	const handleClick = useCallback(() => onclick(value), [value]);
 
 	return (
 		<>
 			<div
-				className={`option ${keyword == activeVal && "selected"}`}
+				className={`option ${keyword == selected && "selected"}`}
 				onClick={handleClick}
 			>
 				<div className='option-flex'>
@@ -33,7 +35,7 @@ export default function Option({
 						)}
 					</div>
 				</div>
-				{keyword == activeVal && (
+				{keyword == selected && (
 					<div>
 						<Check />
 					</div>

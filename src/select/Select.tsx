@@ -14,6 +14,7 @@ function Select({ selectOptions }: Readonly<ISelectProps>) {
 	const chevronRef = useRef<HTMLDivElement>(null);
 	const [list, setList] = useState(selectOptions);
 	const [activeVal, setActiveVal] = useState("");
+	const [selected, setSelected] = useState("");
 
 	const handleFocus = () => {
 		wrapRef!.current!.classList.add("show");
@@ -37,7 +38,7 @@ function Select({ selectOptions }: Readonly<ISelectProps>) {
 
 	const onclick = (value: string) => {
 		inputRef.current!.value = value;
-		setActiveVal(value);
+		setSelected(value);
 		wrapRef.current?.classList.remove("show");
 		chevronRef.current?.classList.remove("rotate");
 		if (!list.find((itm) => itm.value.includes(value))) {
@@ -88,6 +89,7 @@ function Select({ selectOptions }: Readonly<ISelectProps>) {
 							keyword={itm.keyword.toString()}
 							activeVal={activeVal}
 							Icon={itm.Icon}
+							selected={selected}
 						/>
 					))}
 				{activeVal.length > 2 &&
