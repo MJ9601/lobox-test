@@ -1,7 +1,7 @@
 import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import "./select.sass";
 import Option from "./Option";
-import { Camera, ChevronDown, Icon } from "lucide-react";
+import { ChevronDown, Icon } from "lucide-react";
 
 interface ISelectProps {
 	selectOptions: { keyword: string; value: string; Icon?: typeof Icon }[];
